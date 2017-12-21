@@ -57,9 +57,7 @@
     </style>
     <input id="klubbNavn" type="text" placeholder="klubbnavn">
     <input id="antallMedlemmer" type="number" placeholder="Antall Medlemmer" onkeypress="return event.charCode >= 48, 8 && event.charCode <= 57">
-
     <input id="aktiveMedlemmer" type="number" placeholder="Aktive Medlemmer" onkeypress="return event.charCode >= 48, 8 && event.charCode <= 57">
-
     <button type="button" id="regnUt" onclick="regnUt()">Kalkuler</button>
 
     <p>StøtteMedlemmer:</p>
@@ -88,6 +86,12 @@
       <option>Rubic Kompis - Proff</option>
       <option>Trenger ikke</option>
     </select>
+
+    <select class="Kurs" name="Kurs">
+      <option>Kurs Basic</option>
+      <option>Kurs Proff</option>
+      <option>Ingen kurs</option>
+    </select>
     <script type="text/javascript">
 
     function regnUt() {
@@ -98,6 +102,7 @@
       document.getElementById("totalMedlemmer").innerHTML = totalMedl;
     }
 
+    
     </script>
 
       <footer >Kalkulator programmert av Kompani Kvam (<a  href="https://wwww.facebook.com/Stianeng/" target="_blank">Stian Enget</a> og <a href="https://wwww.facebook.com/eskil.Midtli/" target="_blank">Eskil Midtli</a>)
