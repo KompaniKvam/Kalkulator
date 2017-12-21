@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rubic Kalkulator</title>
+  </head>
+  <body>
+    <style media="screen">
+    html {
+      background: #100a1c;
+      background-image:
+      radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%),
+      radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+      background-attachment: fixed;
+      color: #6cacc5;
+}
+    /* Body background and Font */
+    body {
+      color: #6cacc5;
+      font: 300 100%/1.6 "Source Sans Pro",sans-serif;
+      margin: 0;
+      padding: 5em 0 2em;
+      text-align: center;
+}
+    /* Footer style */
+    footer {
+      @import url("https://fonts.googleapis.com/css?family=Quicksand");
+      font-style: italic;
+      font-size: 1em;
+    }
+    /* link hover */
+    a:hover {
+      background-color: #6cacc5;
+    }
+    /* for input */
+    input {
+      height: 3em;
+      display: table-cell;
+      width: 10%;
+      vertical-align: middle;
+      border-color: #6cacc5;
+    }
+
+    input:hover {
+      background-color: #6cacc5;
+    }
+    /* for button */
+    button {
+      height: 3.6em;
+      border-color: #6cacc5;
+    }
+
+    button:hover {
+      background-color: #6cacc5;
+    }
+
+    </style>
+    <input id="klubbNavn" type="text" placeholder="Klubbnavn">
+    <input id="antallMedlemmer" type="number" placeholder="Antall Medlemmer" onkeypress="return event.charCode >= 48, 8 && event.charCode <= 57">
+
+    <input id="aktiveMedlemmer" type="number" placeholder="Aktive Medlemmer" onkeypress="return event.charCode >= 48, 8 && event.charCode <= 57">
+
+    <button type="button" id="regnUt" onclick="regnUt()">Kalkuler</button>
+
+    <p>StøtteMedlemmer:</p>
+    <div id="totalMedlemmer"></div>
+
+    <select class="medlemskapsvalg">
+      <option>Enkelt Medlemskap</option>
+      <option>Familie og Enkelt Medlemskap</option>
+    </select>
+    <script type="text/javascript">
+
+    function regnUt() {
+      var antallMedl = parseInt(document.getElementById("antallMedlemmer").value);
+      var aktiveMedl = parseInt(document.getElementById("aktiveMedlemmer").value);
+      var totalMedl = +antallMedl - +aktiveMedl;
+
+      document.getElementById("totalMedlemmer").innerHTML = totalMedl;
+    }
+
+    </script>
+
+      <footer >Kalkulator programmert av Kompani Kvam (<a  href="https://wwww.facebook.com/Stianeng/" target="_blank">Stian Enget</a> og <a href="https://wwww.facebook.com/eskil.Midtli/" target="_blank">Eskil Midtli</a>)
+    </footer>
+  </body>
+</html>
